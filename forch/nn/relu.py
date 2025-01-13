@@ -6,7 +6,8 @@ class ReLU(Module):
         super().__init__()
 
     def forward(self, x):
+        self.input = x
         return np.maximum(0, x)
 
-    def backward(self, x):
-        return np.where(x > 0, 1, 0)
+    def backward(self, d_out):
+        return np.where(self.input > 0, d_out, 0)

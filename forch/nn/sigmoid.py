@@ -6,7 +6,8 @@ class Sigmoid(Module):
         super().__init__()
 
     def forward(self, x):
-        return 1 / np.exp(-x)
+        self.output = 1 / (1 + np.exp(-x))
+        return self.output
     
-    def backward(self, x):
-        return self.forward(x) * (1 - self.forward(x))
+    def backward(self, d_out):
+        return d_out * self.output * (1 - self.output)
