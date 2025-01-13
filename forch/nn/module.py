@@ -8,7 +8,6 @@ class Module(ABC):
     def forward(self, x):
         pass
 
-    @abstractmethod
     def backward(self, d_out):
         # d_out: gradient of loss w.r.t. this layer
         pass
