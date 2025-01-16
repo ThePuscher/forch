@@ -1,6 +1,6 @@
 import numpy as np
 
-class Parameter():
+class Parameter:
     def __init__(self, value):
         self.value = value
         self.grad = np.zeros_like(self.value)

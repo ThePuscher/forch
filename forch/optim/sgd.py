@@ -1,7 +1,7 @@
 from ..parameter import Parameter
 from typing import List
 
-class SGD():
+class SGD:
     def __init__(self, parameters: List[Parameter], lr: float):
         self.parameters = parameters
         self.lr = lr
