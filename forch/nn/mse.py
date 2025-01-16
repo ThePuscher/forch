@@ -11,4 +11,4 @@ class MSELoss(Module):
         return np.mean((y_hat - y)**2)
     
     def backward(self):
-        return 2 * (self.y_hat - self.y) / self.y.size
+        return 2 * ((self.y_hat - self.y) / len(self.y))
